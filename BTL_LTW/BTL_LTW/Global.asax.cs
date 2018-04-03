@@ -33,6 +33,7 @@ namespace BTL_LTW
         {
             Session["login"] = false;
             Session["username"] = "";
+            Session["cartsCount"] = 0;
             Session["carts"] = new List<Product>();
         }
 

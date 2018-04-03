@@ -22,6 +22,7 @@ namespace BTL_LTW
                 img.ImageUrl = product.Path;
                 lblName.Text = product.Name;
                 lblDescribe.Text = product.Describe;
+                lblPrices.Text = product.Price.ToString();
             } catch (Exception ex)
             {
                 Response.Write("<script> alert('Chọn 1 sản phẩm để xem!');" +
@@ -45,6 +46,10 @@ namespace BTL_LTW
                     break;
                 }
             }
+            int count = (int)Session["cartsCount"];
+            if (count == null) count = 0;
+            count++;
+            Session["cartsCount"] = count;
             Session["carts"] = carts;
             Response.Write("<script> alert('Thêm vào giỏ hàng thành công!');"+
                 "window.location='http://localhost:55872/HomePage.aspx';</script>");

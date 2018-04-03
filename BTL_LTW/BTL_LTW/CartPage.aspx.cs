@@ -59,9 +59,17 @@ namespace BTL_LTW
                     break;
                 }
             }
+            int cartsCount = (int)Session["cartsCount"];
+            cartsCount--;
+            Session["cartsCount"] = cartsCount;
             Session["carts"] = carts;
-            Response.Write("<script> alert('Thêm vào giỏ hàng thành công!'); </script>");
+            Response.Write("<script> alert('Xoá giỏ hàng thành công!'); </script>");
             Response.Redirect("CartPage.aspx");
+        }
+        protected void btnDetail_Click(object sender, EventArgs e)
+        {
+            Button btn = (Button)sender;
+            Response.Redirect("DetailPage.aspx?id=" + btn.CommandArgument.ToString());
         }
     }
 }

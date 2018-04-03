@@ -13,13 +13,13 @@ namespace BTL_LTW {
     public partial class DetailPage {
         
         /// <summary>
-        /// forDetail control.
+        /// formDetail control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm forDetail;
+        protected global::System.Web.UI.HtmlControls.HtmlForm formDetail;
         
         /// <summary>
         /// img control.
@@ -40,13 +40,13 @@ namespace BTL_LTW {
         protected global::System.Web.UI.WebControls.Label lblName;
         
         /// <summary>
-        /// lblDescribe control.
+        /// lblPrices control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblDescribe;
+        protected global::System.Web.UI.WebControls.Label lblPrices;
         
         /// <summary>
         /// btnAddToCarts control.
@@ -56,5 +56,14 @@ namespace BTL_LTW {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnAddToCarts;
+        
+        /// <summary>
+        /// lblDescribe control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblDescribe;
     }
 }

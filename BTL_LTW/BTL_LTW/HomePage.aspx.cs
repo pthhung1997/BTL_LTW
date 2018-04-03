@@ -35,7 +35,10 @@ namespace BTL_LTW
                     break;
                 }
             }
-
+            int count = (int)Session["cartsCount"];
+            if (count == null) count = 0;
+            count++;
+            Session["cartsCount"] = count;
             Session["carts"] = carts;
             Response.Write("<script> alert('Thêm vào giỏ hàng thành công!'); </script>");
         }

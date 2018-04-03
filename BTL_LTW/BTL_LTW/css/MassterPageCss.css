@@ -64,6 +64,7 @@
     height:200px;
     background-color: #e6e6e6;
     text-align:center;
+    margin-top:20px;
 }
 
 #footer #TextFooter{
@@ -71,4 +72,9 @@
     font-size:14px;
     line-height: 1.4;
     margin-top: 30px;
+}
+
+#footer{
+   /*position:absolute;*/
+   bottom:0;
 }

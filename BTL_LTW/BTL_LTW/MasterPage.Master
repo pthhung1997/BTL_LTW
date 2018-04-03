@@ -34,7 +34,7 @@
                 </ul>
             </nav>
         </div>
-        <div id="body">
+        <div id="body" style="min-height:350px;">
             <div class="row">
                 <asp:ContentPlaceHolder ID="content" runat="server">
                 </asp:ContentPlaceHolder>
