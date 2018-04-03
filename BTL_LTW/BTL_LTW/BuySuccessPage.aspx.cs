@@ -22,5 +22,10 @@ namespace BTL_LTW
             lblAddress.Text = user.address;
             Session["carts"] = new List<Product>();
         }
+
+        protected void btnHomePage_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("HomePage.aspx");
+        }
     }
 }

@@ -49,15 +49,6 @@ namespace BTL_LTW {
         protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl dateDob;
         
         /// <summary>
-        /// errDob control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label errDob;
-        
-        /// <summary>
         /// litsGender control.
         /// </summary>
         /// <remarks>
@@ -65,15 +56,6 @@ namespace BTL_LTW {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList litsGender;
-        
-        /// <summary>
-        /// errGender control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label errGender;
         
         /// <summary>
         /// txtAddress control.
@@ -85,15 +67,6 @@ namespace BTL_LTW {
         protected global::System.Web.UI.WebControls.TextBox txtAddress;
         
         /// <summary>
-        /// errAddress control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label errAddress;
-        
-        /// <summary>
         /// txtPhoneNumber control.
         /// </summary>
         /// <remarks>
@@ -101,15 +74,6 @@ namespace BTL_LTW {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtPhoneNumber;
-        
-        /// <summary>
-        /// errPhoneNumber control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label errPhoneNumber;
         
         /// <summary>
         /// txtEmail control.
@@ -157,15 +121,6 @@ namespace BTL_LTW {
         protected global::System.Web.UI.WebControls.TextBox txtPassword;
         
         /// <summary>
-        /// errPassword control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label errPassword;
-        
-        /// <summary>
         /// txtPassword2 control.
         /// </summary>
         /// <remarks>
@@ -173,15 +128,6 @@ namespace BTL_LTW {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtPassword2;
-        
-        /// <summary>
-        /// errPassword2 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label errPassword2;
         
         /// <summary>
         /// btnSubmit control.

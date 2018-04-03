@@ -39,17 +39,17 @@
                             Trên 30 triệu<br />
                         </form>--%>
                             <asp:RadioButtonList ID="RadioButtonList1" runat="server">
-                                <asp:ListItem runat="server">
+                                <asp:ListItem class="checkbox" runat="server">
                                     Dưới 5 triệu</asp:ListItem>
-                                <asp:ListItem runat="server">
+                                <asp:ListItem class="checkbox" runat="server">
                                     Dưới 5 triệu</asp:ListItem>
-                                <asp:ListItem runat="server">
+                                <asp:ListItem class="checkbox" runat="server">
                                     Từ 5 - 10 triệu</asp:ListItem>
-                                <asp:ListItem runat="server">
+                                <asp:ListItem class="checkbox" runat="server">
                                     Từ 10 - 15 triệu</asp:ListItem>
-                                <asp:ListItem runat="server">
+                                <asp:ListItem class="checkbox" runat="server">
                                     Từ 15 - 20 triệu</asp:ListItem>
-                                <asp:ListItem runat="server">
+                                <asp:ListItem class="checkbox" runat="server">
                                     Trên 20 triệu</asp:ListItem>
                             </asp:RadioButtonList>
                         </fieldset>

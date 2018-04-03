@@ -3,8 +3,8 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="content" runat="server">
     <link href="css/CartPageCss.css" rel="stylesheet" />
     <div class="container">
-        <asp:Label ID="lblErr" runat="server" Text="" Style="color: red; text-align: initial; font-size:20px;"></asp:Label>
-        <%if ( (int)Session["cartsCount"] != 0)
+
+        <%if ((int)Session["cartsCount"] != 0)
             { %>
         <h4>Giỏ hàng</h4>
         <form runat="server" id="formCarts">
@@ -20,7 +20,8 @@
                 <asp:ListView ID="lwCarts" runat="server">
                     <ItemTemplate>
                         <tr>
-                            <td><label><%# Container.DataItemIndex + 1 %></label></td>
+                            <td>
+                                <label><%# Container.DataItemIndex + 1 %></label></td>
                             <td>
                                 <img src='<%# Eval("Path")%>' class="img-rounded" /></td>
                             <td>
@@ -35,12 +36,19 @@
                     </ItemTemplate>
                 </asp:ListView>
             </table>
-            <div class="row" style="text-align:center;">
-                <asp:Button ID="btnBuy" runat="server" Text="Thanh toán" OnClick="btnBuy_Click" class="btn btn-success"/>
-            <asp:Button ID="btnHomePage" runat="server" Text="Trang chủ" OnClick="btnHomePage_Click" class="btn btn-default"/>
+            <div class="row" style="text-align: center;">
+                <asp:Button ID="btnBuy" runat="server" Text="Thanh toán" OnClick="btnBuy_Click" class="btn btn-success" />
+                <asp:Button ID="btnHomePage" runat="server" Text="Trang chủ" OnClick="btnHomePage_Click" class="btn btn-default" />
             </div>
-            
+
         </form>
+        <%}
+        else
+        {%>
+        <div class="row col-md-4 col-md-offset-5" style="margin-top:30px;">
+            <asp:Label ID="lblErr" runat="server" Text="" Style="color: red; font-size: 20px;"></asp:Label>
+            <br />
+            <img style="text-align: center;" src="image/carts-empty.jpg" /></div>
         <%} %>
     </div>
 </asp:Content>

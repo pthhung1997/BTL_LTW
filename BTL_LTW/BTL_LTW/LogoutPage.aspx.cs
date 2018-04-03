@@ -14,6 +14,8 @@ namespace BTL_LTW
             Session["login"] = false;
             Session["username"] = "";
             Session["user"] = null;
+            Response.Write("<script> alert('Bạn đã đăng xuất thành công');" +
+                   "window.location='http://localhost:55872/HomePage.aspx';</script>");
         }
 
         protected void btnHomePage_Click(object sender, EventArgs e)
