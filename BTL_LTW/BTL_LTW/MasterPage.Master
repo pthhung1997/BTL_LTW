@@ -1,0 +1,77 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="MasterPage.master.cs" Inherits="BTL_LTW.MasterPage" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <link href="Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="Content/bootstrap.css" rel="stylesheet" />
+    <link href="css/MassterPageCss.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="container">
+        <div id="header">
+            <div class="row">
+                <div class="col-md-12">
+                    <img src="image/banner.jpg" />
+                </div>
+            </div>
+            <nav id="TopMenu" class="navbar navbar-expand-lg navbar-light bg-light">
+                <ul>
+                    <li><a href="/HomePage.aspx" class="btn btn-link">Trang chủ</a></li>
+                    <li><a href="/CartPage.aspx" class="btn btn-link">Giỏ hàng</a></li>
+                    <li><a href="/AboutPage.aspx" class="btn btn-link">Liên hệ</a></li>
+                    <% if (Session["login"] == null || !(bool)Session["login"])
+                        { %>
+                    <li><a href="/RegPage.aspx" class="btn btn-link">Đăng ký</a></li>
+                    <li><a href="/LoginPage.aspx" class="btn btn-link">Đăng nhập</a></li>
+                    <%}
+                        else
+                        {%>
+                    <li><a href="/LogoutPage.aspx" class="btn btn-link">Đăng xuất</a></li>
+                    <%} %>
+                </ul>
+            </nav>
+        </div>
+        <div id="body">
+            <div class="row">
+                <asp:ContentPlaceHolder ID="content" runat="server">
+                </asp:ContentPlaceHolder>
+            </div>
+        </div>
+        <div id="footer">
+            <div class="row">
+                <div class="col-md-4">
+                    <ul>
+                        <li><a href="#">Tìm hiểu về mua trả góp</a></li>
+                        <li><a href="#">Chính sách bảo hành</a></li>
+                        <li><a href="#">Chính sách đổi trả</a></li>
+                        <li><a href="#">Giao hàng & Thanh toán</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <ul>
+                        <li><a href="#">Giới thiệu cửa hàng</a></li>
+                        <li><a href="#">Tuyển dụng</a></li>
+                        <li><a href="#">Gửi góp ý, khiếu nại</a></li>
+                        <li><a href="#">Tìm cửa hàng gần bạn</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <ul>
+                        <li><a href="#">Gọi mua hàng 1800.1060 (7:30 - 22:00)</a></li>
+                        <li><a href="#">Gọi khiếu nại 1800.1062 (8:00 - 21:30)</a></li>
+                        <li><a href="#">Gọi bảo hành 1800.1064 (8:00 - 21:00)</a></li>
+                        <li><a href="#">Hỗ trợ kỹ thuật 1800.1763 (7:30 - 22:00)</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="row col-md-12">
+                <div class="col-md-12" id="TextFooter">Bản quyền thuộc về phamtienhung@hou.edu.vn</div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="scripts/jquery-3.0.0.min.js"></script>
+</html>
