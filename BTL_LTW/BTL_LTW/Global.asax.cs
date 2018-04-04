@@ -13,18 +13,18 @@ namespace BTL_LTW
         protected void Application_Start(object sender, EventArgs e)
         {
             List<Product> products = new List<Product>();
-            Product p;
-            for(int i = 1; i <= 7; ++i)
+            for (int i = 1; i <= 9; ++i)
             {
-                p = new Product();
-                p.Id = i;
-                p.Name = "Bàn Phím " + i;
-                p.Path = "image\\" + i + ".jpg";
-                p.Describe = "Bàn phím hịn nhất shop!";
-                p.Price = 1000000;
-                products.Add(p);
+                products.Add(new Product() { Id = i, Name = "Bàn Phím " + i.ToString() , Path = "image\\" + i + ".jpg", Describe = "Bàn phím hịn nhấp shop" , Price = (i % 10) * 1000000 + 500000});
             }
-            
+            for (int i = 10; i <= 19; ++i)
+            {
+                products.Add(new Product() { Id = i, Name = "RAM " + i.ToString(), Path = "image\\" + i + ".jpg", Describe = "Ram phím hịn nhất shop", Price = (i % 10) * 1000000 + 500000 });
+            }
+            for (int i = 20; i <= 24; ++i)
+            {
+                products.Add(new Product() { Id = i, Name = "Ổ cứng " + i.ToString(), Path = "image\\" + i + ".jpg", Describe = "Ổ cứng SSD nhất shop", Price = (i / 10) * 10000000 + 500000 });
+            }
             Application["products"] = products;
             Application["users"] = new List<Users>();
         }

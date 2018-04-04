@@ -12,7 +12,7 @@ namespace BTL_LTW
         protected void Page_Load(object sender, EventArgs e)
         {
             List<Product> carts = (List<Product>)Session["carts"];
-            float prices = 0;
+            int prices = 0;
             for(int i = 0; i < carts.Count; ++i)
             {
                 prices += carts[i].Price;

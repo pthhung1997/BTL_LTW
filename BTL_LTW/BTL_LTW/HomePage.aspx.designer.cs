@@ -22,13 +22,22 @@ namespace BTL_LTW {
         protected global::System.Web.UI.HtmlControls.HtmlForm formHomePage;
         
         /// <summary>
-        /// RadioButtonList1 control.
+        /// txtNameProduct control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RadioButtonList RadioButtonList1;
+        protected global::System.Web.UI.WebControls.TextBox txtNameProduct;
+        
+        /// <summary>
+        /// rbPrice control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RadioButtonList rbPrice;
         
         /// <summary>
         /// btnSearch control.
@@ -38,6 +47,15 @@ namespace BTL_LTW {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnSearch;
+        
+        /// <summary>
+        /// btnCanceSearch control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnCanceSearch;
         
         /// <summary>
         /// lwHomePage control.

@@ -11,7 +11,9 @@ namespace BTL_LTW
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if(( bool)Session["login"])
+              lblUsername.Text =  (String)Session["username"];
+                lblCartCount.Text = ((int)Session["cartsCount"]).ToString();
         }
     }
 }

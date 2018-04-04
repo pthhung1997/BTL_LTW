@@ -36,11 +36,10 @@ namespace BTL_LTW
                 }
             }
             int count = (int)Session["cartsCount"];
-            if (count == null) count = 0;
             count++;
             Session["cartsCount"] = count;
             Session["carts"] = carts;
-            Response.Write("<script> alert('Thêm vào giỏ hàng thành công!'); </script>");
+            Response.Write("<script> alert('Thêm vào giỏ hàng thành công!'); window.location='http://localhost:55872/HomePage.aspx';</script>");
         }
 
         protected void btnDetail_Click(object sender, EventArgs e)
@@ -49,5 +48,47 @@ namespace BTL_LTW
             Response.Redirect("DetailPage.aspx?id=" + btn.CommandArgument.ToString());
         }
 
+        protected void btnSearch_Click(object sender, EventArgs e)
+        {
+            String price = "";
+            int fPrice = 30000000;
+            int maxPrice = 0;
+            String name = "";
+            List<Product> products = (List<Product>)Application["products"];
+            List<Product> result = new List<Product>();
+            if (rbPrice.SelectedItem != null)
+            {
+                price = rbPrice.SelectedItem.Value.ToString();
+                fPrice = int.Parse(price);
+                fPrice *= 1000000;
+                maxPrice = fPrice + 5000000;
+            }
+            if(txtNameProduct.Text.Trim() != null || txtNameProduct.Text.Trim().Count() > 0)
+            {
+                name = txtNameProduct.Text.Trim();
+            }
+
+            foreach(Product product in products)
+            {
+                if (product.Name.ToLower().Contains(name.ToLower()) || (product.Price >= fPrice && product.Price <= maxPrice)) result.Add(product);
+            }
+
+
+            Response.Write("<script> alert('"+price + name +"');</script>");
+
+            btnCanceSearch.Visible = true;
+            lwHomePage.DataSource = result;
+            lwHomePage.DataBind();
+        }
+
+        protected void btnCanceSearch_Click(object sender, EventArgs e)
+        {
+            btnCanceSearch.Visible = false;
+            txtNameProduct.Text = "";
+            rbPrice.SelectedValue = null;
+            List<Product> products = (List<Product>)Application["products"];
+            lwHomePage.DataSource = products;
+            lwHomePage.DataBind();
+        }
     }
 }

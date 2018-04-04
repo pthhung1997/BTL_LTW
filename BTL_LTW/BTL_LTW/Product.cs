@@ -11,6 +11,6 @@ namespace BTL_LTW
         public string Name { get; set; }
         public string Path { get; set; }
         public string Describe { get; set; }
-        public float Price { get; set; }
+        public int Price { get; set; }
     }
 }
