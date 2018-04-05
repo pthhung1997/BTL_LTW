@@ -51,8 +51,8 @@ namespace BTL_LTW
         protected void btnSearch_Click(object sender, EventArgs e)
         {
             String price = "";
-            int fPrice = 30000000;
-            int maxPrice = 0;
+            int fPrice = 0;
+            int maxPrice = int.MaxValue;
             String name = "";
             List<Product> products = (List<Product>)Application["products"];
             List<Product> result = new List<Product>();
@@ -62,6 +62,7 @@ namespace BTL_LTW
                 fPrice = int.Parse(price);
                 fPrice *= 1000000;
                 maxPrice = fPrice + 5000000;
+                if (fPrice == 20000000) maxPrice = int.MaxValue;
             }
             if(txtNameProduct.Text.Trim() != null || txtNameProduct.Text.Trim().Count() > 0)
             {
@@ -70,11 +71,11 @@ namespace BTL_LTW
 
             foreach(Product product in products)
             {
-                if (product.Name.ToLower().Contains(name.ToLower()) || (product.Price >= fPrice && product.Price <= maxPrice)) result.Add(product);
+                if (product.Name.ToLower().Contains(name.ToLower()) && (product.Price >= fPrice && product.Price <= maxPrice)) result.Add(product);
             }
 
 
-            Response.Write("<script> alert('"+price + name +"');</script>");
+           // Response.Write("<script> alert('"+price + name +"');</script>");
 
             btnCanceSearch.Visible = true;
             lwHomePage.DataSource = result;

@@ -107,6 +107,7 @@
     <Content Include="css\DetailPageCss.css" />
     <Content Include="css\HomePageCss.css" />
     <Content Include="css\MassterPageCss.css" />
+    <Content Include="css\RegPageCss.css" />
     <Content Include="DetailPage.aspx" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />

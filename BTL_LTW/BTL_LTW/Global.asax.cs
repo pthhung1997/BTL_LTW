@@ -9,7 +9,7 @@ namespace BTL_LTW
 {
     public class Global : System.Web.HttpApplication
     {
-
+        //set session timout in webconfig
         protected void Application_Start(object sender, EventArgs e)
         {
             List<Product> products = new List<Product>();
@@ -27,6 +27,7 @@ namespace BTL_LTW
             }
             Application["products"] = products;
             Application["users"] = new List<Users>();
+            Application["onlineCounter"] = 0;
         }
 
         protected void Session_Start(object sender, EventArgs e)
@@ -35,6 +36,7 @@ namespace BTL_LTW
             Session["username"] = "";
             Session["cartsCount"] = 0;
             Session["carts"] = new List<Product>();
+            Application["onlineCounter"] = Convert.ToInt32(Application["onlineCounter"]) + 1;
         }
 
         protected void Application_BeginRequest(object sender, EventArgs e)
@@ -59,7 +61,7 @@ namespace BTL_LTW
 
         protected void Application_End(object sender, EventArgs e)
         {
-
+            Application["onlineCounter"] = Convert.ToInt32(Application["onlineCounter"]) - 1;
         }
     }
 }

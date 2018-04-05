@@ -18,7 +18,7 @@ namespace BTL_LTW
         {
             Users user = new Users();
             user.fullName = txtFullName.Text;
-            user.gender = litsGender.SelectedValue.ToString();
+            user.gender = listGender.SelectedValue.ToString();
             user.dob = dateDob.ToString();
             user.address = txtAddress.Text;
             user.email = txtEmail.Text;

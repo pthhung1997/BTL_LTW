@@ -31,15 +31,6 @@ namespace BTL_LTW {
         protected global::System.Web.UI.WebControls.TextBox txtFullName;
         
         /// <summary>
-        /// errFullName control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label errFullName;
-        
-        /// <summary>
         /// dateDob control.
         /// </summary>
         /// <remarks>
@@ -49,13 +40,13 @@ namespace BTL_LTW {
         protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl dateDob;
         
         /// <summary>
-        /// litsGender control.
+        /// listGender control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList litsGender;
+        protected global::System.Web.UI.WebControls.DropDownList listGender;
         
         /// <summary>
         /// txtAddress control.
