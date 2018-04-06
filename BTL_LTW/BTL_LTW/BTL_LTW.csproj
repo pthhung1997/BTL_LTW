@@ -209,6 +209,7 @@
     <Compile Include="CartPage.aspx.designer.cs">
       <DependentUpon>CartPage.aspx</DependentUpon>
     </Compile>
+    <Compile Include="CustomProduct.cs" />
     <Compile Include="DetailPage.aspx.cs">
       <DependentUpon>DetailPage.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

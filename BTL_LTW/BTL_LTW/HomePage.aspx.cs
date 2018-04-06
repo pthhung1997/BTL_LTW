@@ -22,21 +22,25 @@ namespace BTL_LTW
         protected void btnAddToCarts_Click(object sender, EventArgs e)
         {
             List<Product> products = (List<Product>)Application["products"];
+            Product product = null;
             Button btn = (Button)sender;
             int id = Convert.ToInt32(btn.CommandArgument.ToString());
-            List<Product> carts = (List<Product>)Session["carts"];
-            if (carts == null) carts = new List<Product>();
+            List<CustomProduct> carts = (List<CustomProduct>)Session["carts"];
+            if (carts == null) carts = new List<CustomProduct>();
             
             for (int i = 0; i < products.Count; ++i)
             {
                 if (products[i].Id == id)
                 {
-                    carts.Add(products[i]);
+                    product = products[i];
                     break;
                 }
             }
             int count = (int)Session["cartsCount"];
+
+            carts = CustomProduct.addAProduct(product, carts);
             count++;
+
             Session["cartsCount"] = count;
             Session["carts"] = carts;
             Response.Write("<script> alert('Thêm vào giỏ hàng thành công!'); window.location='http://localhost:55872/HomePage.aspx';</script>");
@@ -91,5 +95,6 @@ namespace BTL_LTW
             lwHomePage.DataSource = products;
             lwHomePage.DataBind();
         }
+
     }
 }

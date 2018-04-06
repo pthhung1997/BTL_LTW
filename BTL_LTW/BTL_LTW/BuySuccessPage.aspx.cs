@@ -11,16 +11,7 @@ namespace BTL_LTW
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            List<Product> carts = (List<Product>)Session["carts"];
-            int prices = 0;
-            for(int i = 0; i < carts.Count; ++i)
-            {
-                prices += carts[i].Price;
-            }
-            Users user = (Users)Session["user"];
-            lblPrice.Text = prices.ToString();
-            lblAddress.Text = user.address;
-            Session["carts"] = new List<Product>();
+            
         }
 
         protected void btnHomePage_Click(object sender, EventArgs e)

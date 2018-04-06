@@ -13,25 +13,28 @@ namespace BTL_LTW
         {
             if (!Page.IsPostBack)
             {
-                List<Product> products = (List<Product>)Session["carts"];
+                List<CustomProduct> products = (List<CustomProduct>)Session["carts"];
                 if (products == null || products.Count == 0)
                 {
                     lblErr.Text = "Giỏ hàng của bạn trống!";
-                    //btnBuy.Visible = false;
+                    btnBuy.Visible = false;
                 }
                 else
                 {
+                    int prices = 0;
                     lwCarts.DataSource = products;
                     lwCarts.DataBind();
+                    foreach (CustomProduct customProduct in products)
+                    {
+                        prices += customProduct.Count * customProduct.product.Price;
+                    }
+
+                    lblPrices.Text = prices.ToString("0,0") + " VND";
 
                 }
             }
         }
 
-        protected void btnHomePage_Click(object sender, EventArgs e)
-        {
-            Response.Redirect("HomePage.aspx");
-        }
 
         protected void btnBuy_Click(object sender, EventArgs e)
         {
@@ -46,30 +49,117 @@ namespace BTL_LTW
             }
         }
 
+        protected void btnDeleteAProduct_Click(object sender, EventArgs e)
+        {
+            ImageButton btn = (ImageButton)sender;
+            int count = 0;
+            int id = Convert.ToInt32(btn.CommandArgument.ToString());
+            List<CustomProduct> carts = (List<CustomProduct>)Session["carts"];
+            Product product = new Product();
+            foreach (CustomProduct custom in carts)
+            {
+                if (custom.product.Id == id)
+                {
+                    product = custom.product;
+                    count = custom.Count;
+                    break;
+                }
+            }
+
+            if(count == 1)
+            {
+                btnDel.Attributes.Add("CommandArgument", id.ToString());
+                //ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "none",
+                //   "<script>$('#myModal').modal('show');</script>", false);
+                Response.Write("<script>$('#myModal').modal('show');</script>");
+                return;
+            }
+            carts = CustomProduct.removeAProduct(product, carts);
+
+            int cartsCount = (int)Session["cartsCount"];
+            cartsCount--;
+
+            Session["cartsCount"] = cartsCount;
+            Session["carts"] = carts;
+            
+            resetValue();
+
+        }
+
         protected void btnDelete_Click(object sender, EventArgs e)
         {
             Button btn = (Button)sender;
             int id = Convert.ToInt32(btn.CommandArgument.ToString());
-            List<Product> carts = (List<Product>)Session["carts"];
-            for (int i = carts.Count - 1; i >= 0; --i)
+            int count = 0;
+            List<CustomProduct> carts = (List<CustomProduct>)Session["carts"];
+            Product product = new Product();
+            foreach (CustomProduct custom in carts)
             {
-                if (carts[i].Id == id)
+                if (custom.product.Id == id)
                 {
-                    carts.RemoveAt(i);
+                    product = custom.product;
+                    count = custom.Count;
                     break;
                 }
             }
+
+            carts = CustomProduct.removeAllProduct(product, carts);
+
             int cartsCount = (int)Session["cartsCount"];
-            cartsCount--;
+            cartsCount -= count;
+
             Session["cartsCount"] = cartsCount;
             Session["carts"] = carts;
-            Response.Write("<script> alert('Xoá giỏ hàng thành công!'); </script>");
-            Response.Redirect("CartPage.aspx");
+
+            resetValue();
         }
         protected void btnDetail_Click(object sender, EventArgs e)
         {
             Button btn = (Button)sender;
             Response.Redirect("DetailPage.aspx?id=" + btn.CommandArgument.ToString());
+        }
+
+        protected void btnAddAProduct_Click(object sender, ImageClickEventArgs e)
+        {
+            ImageButton btn = (ImageButton)sender;
+            int id = Convert.ToInt32(btn.CommandArgument.ToString());
+            List<CustomProduct> carts = (List<CustomProduct>)Session["carts"];
+            Product product = new Product();
+            foreach (CustomProduct custom in carts)
+            {
+                if (custom.product.Id == id)
+                {
+                    product = custom.product;
+                    break;
+                }
+            }
+
+            carts = CustomProduct.addAProduct(product, carts);
+
+            int cartsCount = (int)Session["cartsCount"];
+            cartsCount++;
+
+            Session["cartsCount"] = cartsCount;
+            Session["carts"] = carts;
+
+            resetValue();
+        }
+
+        private void resetValue()
+        {
+            int prices = 0;
+            int cartsCount = (int)Session["cartsCount"];
+            List<CustomProduct> carts = (List<CustomProduct>)Session["carts"];
+            foreach (CustomProduct customProduct in carts)
+            {
+                prices += customProduct.Count * customProduct.product.Price;
+            }
+
+            lblPrices.Text = prices.ToString("0,0") + " VND";
+            Label lblCartCount = (Label)Master.FindControl("lblCartCount");
+            lblCartCount.Text = cartsCount.ToString();
+            lwCarts.DataSource = carts;
+            lwCarts.DataBind();
         }
     }
 }

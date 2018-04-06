@@ -35,7 +35,7 @@ namespace BTL_LTW
             Session["login"] = false;
             Session["username"] = "";
             Session["cartsCount"] = 0;
-            Session["carts"] = new List<Product>();
+            Session["carts"] = new List<CustomProduct>();
             Application["onlineCounter"] = Convert.ToInt32(Application["onlineCounter"]) + 1;
         }
 

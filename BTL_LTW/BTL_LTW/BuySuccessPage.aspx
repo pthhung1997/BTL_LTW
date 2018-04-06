@@ -5,12 +5,7 @@
         <div class="container" style="text-align:center;">
             <img src="image/thanksoder.jpg" />
             <p>
-                Đơn hàng của bạn có giá trị
-            <asp:Label ID="lblPrice" runat="server" Text="" Style="color: red;"></asp:Label>
-            </p>
-            <p>
-                Chúng tôi sẽ gửi hàng cho bạn đến địa chỉ:
-            <asp:Label ID="lblAddress" runat="server" Text="Label"></asp:Label>.
+                Đặt hàng thành công!
             </p>
             <asp:Button ID="btnHomePage" runat="server" Text="Về trang chủ" class="btn btn-link" OnClick="btnHomePage_Click" />
         </div>
