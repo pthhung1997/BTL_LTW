@@ -11,7 +11,10 @@ namespace BTL_LTW
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if ((bool)Session["login"])
+            {
+                Response.Write("<script>window.location='http://localhost:55872/HomePage.aspx';</script>");
+            }
         }
 
         protected void btnSubmit_Click(object sender, EventArgs e)
@@ -19,21 +22,24 @@ namespace BTL_LTW
             Users user = new Users();
             user.fullName = txtFullName.Text;
             user.gender = listGender.SelectedValue.ToString();
-            user.dob = dateDob.ToString();
+            user.dob = dateDob.Value;
             user.address = txtAddress.Text;
             user.email = txtEmail.Text;
             user.phoneNumber = txtPhoneNumber.Text;
             user.userName = txtUsername.Text;
             user.passWord = txtPassword.Text;
-
+            Response.Write("<script> alert('"+user.gender+"');</script>");
             if (checkExist(user))
             {
                 List<Users> users = (List<Users>)Application["users"];
                 if (users == null) users = new List<Users>();
                 users.Add(user);
-                Session["users"] = users;
-                Response.Write("<script> alert('Bạn đã đăng kí thành công');" +
-                    "window.location='http://localhost:55872/LoginPage.aspx';</script>");
+                Application["users"] = users;
+                ScriptManager.RegisterStartupScript(this, this.GetType(), "none",
+                   "<script type=\"text/javascript\" language=\"Javascript\" >"
+                   + "$('#regSuccess').modal('show');</script>", false);
+                //Response.Write("<script> alert('Bạn đã đăng nhập thành công');" +
+                //   "window.location='http://localhost:55872/HomePage.aspx';</script>");
             }
         }
 

@@ -39,7 +39,7 @@
                     <li>
                         <div class="txtUsername">
                             <i class="far fa-user"></i>&nbsp Xin chào
-                            <asp:Label ID="lblUsername" runat="server" Text="Label"></asp:Label>
+                           <a href="ProfilePage.aspx" > <asp:Label ID="lblUsername" runat="server" Text=""></asp:Label></a>
                         </div>
                     </li>
                     <li><a href="/LogoutPage.aspx" class="btn btn-link"><i class="fas fa-sign-out-alt"></i>&nbsp Đăng xuất</a></li>
@@ -93,7 +93,7 @@
                 </div>
             </div>
             <div class="row col-md-12">
-                <div class="col-md-12" id="TextFooter">Bản quyền thuộc về phamtienhung@hou.edu.vn</div>
+                <div class="col-md-12" id="TextFooter">Bản quyền thuộc về pth.hung1997@gmail.com</div>
                 <%--<div class="col-md-12" style="text-align:center;">Số người đang online: <%=(int)Application["onlineCounter"] %></div>--%>
             </div>
         </div>

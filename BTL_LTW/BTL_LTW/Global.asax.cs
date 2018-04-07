@@ -26,7 +26,7 @@ namespace BTL_LTW
                 products.Add(new Product() { Id = i, Name = "Ổ cứng " + i.ToString(), Path = "image\\" + i + ".jpg", Describe = "Ổ cứng SSD nhất shop", Price = (i / 10) * 10000000 + 500000 });
             }
             Application["products"] = products;
-            Application["users"] = new List<Users>();
+            Application["users"] = new List<Users>() { new Users { userName = "hungpt", passWord="qweQWE123", address="KTX", gender="nam", fullName="Phạm Tiến Hùng", dob="1997-12-10", email="pth.hung1997@gmail.com", phoneNumber="0948644182"} };
             Application["onlineCounter"] = 0;
         }
 

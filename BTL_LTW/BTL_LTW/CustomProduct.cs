@@ -9,6 +9,7 @@ namespace BTL_LTW
     {
         public Product product { get; set; }
         public int Count {get; set;}
+        public int TotalPrices { get; set; }
 
         public static List<CustomProduct> addAProduct(Product newProduct, List<CustomProduct> listCustomproduct)
         {
@@ -17,10 +18,12 @@ namespace BTL_LTW
                 if(listCustomproduct[i].product.Id == newProduct.Id)
                 {
                     listCustomproduct[i].Count++;
+                    listCustomproduct[i].updateTotalPrices();
                     return listCustomproduct;
                 }
             }
             listCustomproduct.Add(new CustomProduct() { product = newProduct, Count = 1});
+            listCustomproduct[0].updateTotalPrices();
             return listCustomproduct;
         }
 
@@ -31,7 +34,11 @@ namespace BTL_LTW
                 if(listCustomproduct[i].product.Id == product.Id)
                 {
                     if (listCustomproduct[i].Count == 1) listCustomproduct.RemoveAt(i);
-                    else listCustomproduct[i].Count--;
+                    else
+                    {
+                        listCustomproduct[i].Count--;
+                        listCustomproduct[i].updateTotalPrices();
+                    }
                     break;
                 }
             }
@@ -50,6 +57,10 @@ namespace BTL_LTW
                 }
             }
             return listCustomproduct;
+        }
+         private void updateTotalPrices()
+        {
+            this.TotalPrices = product.Price * Count;
         }
 
     }

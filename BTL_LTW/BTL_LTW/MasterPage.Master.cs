@@ -13,7 +13,7 @@ namespace BTL_LTW
         {
             if(( bool)Session["login"])
               lblUsername.Text =  (String)Session["username"];
-                lblCartCount.Text = ((int)Session["cartsCount"]).ToString();
+              lblCartCount.Text = ((int)Session["cartsCount"]).ToString();
         }
     }
 }

@@ -10,34 +10,25 @@
 namespace BTL_LTW {
     
     
-    public partial class DetailPage {
+    public partial class BillPage {
         
         /// <summary>
-        /// formDetail control.
+        /// formCarts control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm formDetail;
+        protected global::System.Web.UI.HtmlControls.HtmlForm formCarts;
         
         /// <summary>
-        /// img control.
+        /// lwCarts control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Image img;
-        
-        /// <summary>
-        /// lblName control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblName;
+        protected global::System.Web.UI.WebControls.ListView lwCarts;
         
         /// <summary>
         /// lblPrices control.
@@ -49,57 +40,48 @@ namespace BTL_LTW {
         protected global::System.Web.UI.WebControls.Label lblPrices;
         
         /// <summary>
-        /// btnAddToCarts control.
+        /// lblName control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnAddToCarts;
+        protected global::System.Web.UI.WebControls.Label lblName;
         
         /// <summary>
-        /// img1 control.
+        /// lblAddress control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Image img1;
+        protected global::System.Web.UI.WebControls.Label lblAddress;
         
         /// <summary>
-        /// img2 control.
+        /// lblPhoneNumber control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Image img2;
+        protected global::System.Web.UI.WebControls.Label lblPhoneNumber;
         
         /// <summary>
-        /// img3 control.
+        /// btnSubmit control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Image img3;
+        protected global::System.Web.UI.WebControls.Button btnSubmit;
         
         /// <summary>
-        /// img4 control.
+        /// lblErr control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Image img4;
-        
-        /// <summary>
-        /// lblDescribe control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblDescribe;
+        protected global::System.Web.UI.WebControls.Label lblErr;
     }
 }

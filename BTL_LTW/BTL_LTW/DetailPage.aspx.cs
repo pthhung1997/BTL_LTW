@@ -20,6 +20,11 @@ namespace BTL_LTW
                 List<Product> products = (List<Product>)Application["products"];
                 Product product = products[iId - 1];
                 img.ImageUrl = product.Path;
+                img1.ImageUrl = product.Path;
+                img2.ImageUrl = product.Path;
+                img3.ImageUrl = product.Path;
+                img4.ImageUrl = product.Path;
+
                 lblName.Text = product.Name;
                 lblDescribe.Text = product.Describe;
                 //lblPrices.Text = String.Format("{0:0,00}", product.Price);

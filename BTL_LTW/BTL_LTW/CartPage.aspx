@@ -33,11 +33,7 @@
                             <td>
                                 <asp:ImageButton runat="server" src="image\\add.png" Style="height: 15px; width: auto;" CommandArgument='<%# Eval("product.Id")%>' CommandName='<%# Eval("product.Id")%>' OnClick="btnAddAProduct_Click" />
                                 <asp:Label runat="server" Text='<%# Eval("Count")%>'></asp:Label>
-                                <asp:ImageButton runat="server" src="image\\minus.png" Style="height: 15px; width: auto;" CommandArgument='<%# Eval("product.Id")%>' CommandName='<%# Eval("product.Id")%>' OnClick="btnDeleteAProduct_Click" />
-                                <%--<asp:ImageButton runat="server" src="image\\minus.png" Style="height: 15px; width: auto;" CommandArgument='<%# Eval("product.Id")%>' CommandName='<%# Eval("product.Id")%>' OnClick="btnDeleteAProduct_Click" Visible='<%#Convert.ToInt32(Eval("Count").ToString()) > 1 ? true : false%>' />--%>
-                                <%--<input type="image" data-toggle="modal" data-target="#myModal" style="height: 15px; width: auto; display: <%#Convert.ToInt32(Eval("Count").ToString()) == 1 ? "inline" : "none"%>" src="image\\minus.png">--%>
-                            
-
+                                <asp:ImageButton runat="server" src="image\\minus.png" Style="height: 15px; width: auto;" CommandArgument='<%# Eval("product.Id")%>' CommandName='<%# Eval("product.Id")%>' OnClick="btnDeleteAProduct_Click" />                        
 
                             </td>
                             <td>
@@ -61,14 +57,14 @@
                         <div class="modal-content">
                             <div class="modal-header">
                                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                                <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+                                <h4 class="modal-title" id="myModalLabel">Xóa sản phẩm</h4>
                             </div>
                             <div class="modal-body">
-                                ...
+                                Bạn có muốn loại bỏ sản phẩm khỏi giỏ hàng ?
                             </div>
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                                <asp:Button ID="btnDel" runat="server" Text="Xác nhận" />
+                                <asp:Button ID="btnDel" class="btn btn-default" runat="server" Text="Xác nhận" OnClick="btnDel_Click" />
                             </div>
                         </div>
                     </div>

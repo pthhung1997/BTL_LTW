@@ -11,7 +11,10 @@ namespace BTL_LTW
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if ((bool)Session["login"])
+            {
+                Response.Write("<script>window.location='http://localhost:55872/HomePage.aspx';</script>");
+            }
         }
 
         protected void btnSubmit_Click(object sender, EventArgs e)
@@ -23,9 +26,13 @@ namespace BTL_LTW
             {
                 Session["login"] = true;
                 Session["username"] = username;
-                Response.Write("<script> alert('Bạn đã đăng nhập thành công');" +
-                   "window.location='http://localhost:55872/HomePage.aspx';</script>");
-            }else
+                //Response.Write("<script> alert('Bạn đã đăng nhập thành công');" +
+                //   "window.location='http://localhost:55872/HomePage.aspx';</script>");
+                ScriptManager.RegisterStartupScript(this, this.GetType(), "none",
+                   "<script type=\"text/javascript\" language=\"Javascript\" >"
+                   + "$('#loginSuccess').modal('show');</script>", false);
+            }
+            else
             {
                     Response.Write("<script> alert('Tài khoản hoặc mật khẩu không đúng ')</script>");
                 

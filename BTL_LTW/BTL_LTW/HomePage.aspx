@@ -22,7 +22,7 @@
                             <legend>
                                 <h5>Giá</h5>
                             </legend>
-                            <asp:RadioButtonList ID="rbPrice" runat="server" style="font-size:14px;">
+                            <asp:RadioButtonList ID="rbPrice" runat="server" Style="font-size: 14px;">
                                 <asp:ListItem class="checkbox" runat="server" Value="0">
                                     Dưới 5 triệu</asp:ListItem>
                                 <asp:ListItem class="checkbox" runat="server" Value="5">
@@ -37,14 +37,16 @@
                         </fieldset>
                     </li>
                     <li>
-                        <asp:Button ID="btnSearch" class="btn btn-default" runat="server" Text="Tìm Kiếm" OnClick="btnSearch_Click"  />
+                        <asp:Button ID="btnSearch" class="btn btn-default" runat="server" Text="Tìm Kiếm" OnClick="btnSearch_Click" />
                     </li>
                 </ul>
             </div>
             <div class="col-md-9">
-                <div class="row"><h4 class="col-md-3">Danh mục sản phẩm</h4>
-                <asp:Button ID="btnCanceSearch" runat="server" Text="Bỏ lọc sản phẩm" class="btn btn-default col-md-3" Visible="false" OnClick="btnCanceSearch_Click" style="margin-top:4px;" /></div>
-                
+                <div class="row">
+                    <h4 class="col-md-3">Danh mục sản phẩm</h4>
+                    <asp:Button ID="btnCanceSearch" runat="server" Text="Bỏ lọc sản phẩm" class="btn btn-default col-md-3" Visible="false" OnClick="btnCanceSearch_Click" Style="margin-top: 4px;" />
+                </div>
+
                 <asp:ListView ID="lwHomePage" runat="server">
                     <ItemTemplate>
                         <div class="item col-md-4">
@@ -52,11 +54,11 @@
                                 <%--<a href='http://localhost:55872/DetailPage.aspx?id=<%# Eval("Id")%>'><img src='<%# Eval("Path")%>' /></a>--%>
                                 <img src='<%# Eval("Path")%>' />
                                 <div class="row">
-                                <asp:Label runat="server" Text='<%# Eval("Name")%>'></asp:Label><br />
-                                <asp:Label runat="server" Text='<%# Eval("Price", "{0:0,00 VND}")%>'></asp:Label><br />
-                                <asp:Button class="btn btn-default" runat="server" CommandArgument='<%# Eval("Id")%>' Text="Xem chi tiết" OnClick="btnDetail_Click" />
-                                <asp:Button class="btn btn-default" runat="server" CommandArgument='<%# Eval("Id")%>' Text="Thêm vào giỏ hàng" OnClick="btnAddToCarts_Click" />
-                                    </div>
+                                    <asp:Label runat="server" Text='<%# Eval("Name")%>'></asp:Label><br />
+                                    <asp:Label runat="server" Text='<%# Eval("Price", "{0:0,00 VND}")%>'></asp:Label><br />
+                                    <asp:Button class="btn btn-default" runat="server" CommandArgument='<%# Eval("Id")%>' Text="Xem chi tiết" OnClick="btnDetail_Click" />
+                                    <asp:Button class="btn btn-default" runat="server" CommandArgument='<%# Eval("Id")%>' Text="Thêm vào giỏ hàng" OnClick="btnAddToCarts_Click" />
+                                </div>
                             </div>
                         </div>
                     </ItemTemplate>

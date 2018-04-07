@@ -80,22 +80,22 @@
                         <div id="home" class="tab-pane fade in active">
                             <div>
                                 <h3 class="detail-title">Chất liệu tốt, siêu bền</h3>
-                                <img src="image/1.jpg" style="width: auto; height: 700px;"/><br />
+                                <asp:Image ID="img1" runat="server" Style="width: auto; height: 700px;" /><br />
                                 <p>Bàn phím game Logitech G213 được làm từ nhựa cao su cao cấp cho độ bền lên đến 10 triệu lần bấm. Điểm nhấn của bàn phím này chính là phần kê tay cực lớn phía dưới, tuy nó khiến cho tổng thể chiếc bàn phím trở nên to lớn cồng kềnh, thế nhưng với những game thủ ít di chuyển thì quả thực đây là thứ vô cùng đáng giá. Nguyên nhân đơn giản bởi phần nhựa lớn này giúp cho cổ tay ít bị mỏi hơn hẳn khi chơi game hay gõ văn bản.</p>
                             </div>
                             <div>
                                 <h3 class="detail-title">Công nghệ đèn Led bắt mắt</h3>
-                                <img src="image/1.jpg" style="width: auto; height: 700px;" /><br />
+                                <asp:Image ID="img2" runat="server" Style="width: auto; height: 700px;" /><br />
                                 <p>Logitech G213 là chiếc bàn phím giả cơ được trang bị đèn Led nền phím RGB có khả năng đổi màu tuỳ ý với nhiều chế độ khác nhau. Hệ thống Led trên chiếc bàn phím này được thiết kế rất tốt, đèn đặt ở giữa phím và có ánh sáng rất vừa mắt, đẹp mà không chói loá, dễ dàng cho game thủ sử dụng trong màn đêm mà không cần thêm chiếc đèn chiếu sáng nào khác.</p>
                             </div>
                             <div>
                                 <h3 class="detail-title">Chất liệu tốt, siêu bền</h3>
-                                <img src="image/1.jpg" style="width: auto; height: 700px;" /><br />
+                                <asp:Image ID="img3" runat="server" Style="width: auto; height: 700px;" /><br />
                                 <p>Bàn phím game Logitech G213 được làm từ nhựa cao su cao cấp cho độ bền lên đến 10 triệu lần bấm. Điểm nhấn của bàn phím này chính là phần kê tay cực lớn phía dưới, tuy nó khiến cho tổng thể chiếc bàn phím trở nên to lớn cồng kềnh, thế nhưng với những game thủ ít di chuyển thì quả thực đây là thứ vô cùng đáng giá. Nguyên nhân đơn giản bởi phần nhựa lớn này giúp cho cổ tay ít bị mỏi hơn hẳn khi chơi game hay gõ văn bản.</p>
                             </div>
                             <div>
                                 <h3 class="detail-title">Công nghệ đèn Led bắt mắt</h3>
-                                <img src="image/1.jpg" style="width: auto; height: 700px;" /><br />
+                                <asp:Image ID="img4" runat="server" Style="width: auto; height: 700px;" /><br />
                                 <p>Logitech G213 là chiếc bàn phím giả cơ được trang bị đèn Led nền phím RGB có khả năng đổi màu tuỳ ý với nhiều chế độ khác nhau. Hệ thống Led trên chiếc bàn phím này được thiết kế rất tốt, đèn đặt ở giữa phím và có ánh sáng rất vừa mắt, đẹp mà không chói loá, dễ dàng cho game thủ sử dụng trong màn đêm mà không cần thêm chiếc đèn chiếu sáng nào khác.</p>
                             </div>
                         </div>
@@ -108,7 +108,7 @@
                     </div>
                 </div>
 
-                
+
 
             </div>
         </form>

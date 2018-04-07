@@ -40,11 +40,11 @@ namespace BTL_LTW
         {
             if ((bool)Session["login"])
             {
-                Response.Redirect("BuySuccessPage.aspx");
+                Response.Redirect("BillPage.aspx");
             }
             else
             {
-                Response.Write("<script> alert('Bạn chưa đăng nhập thành công, vui lòng đăng nhập để thanh toán!');" +
+                Response.Write("<script> alert('Bạn chưa đăng nhập. Vui lòng đăng nhập để thanh toán!');" +
                    "window.location='http://localhost:55872/LoginPage.aspx';</script>");
             }
         }
@@ -66,12 +66,12 @@ namespace BTL_LTW
                 }
             }
 
-            if(count == 1)
+            if (count == 1)
             {
-                btnDel.Attributes.Add("CommandArgument", id.ToString());
-                //ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "none",
-                //   "<script>$('#myModal').modal('show');</script>", false);
-                Response.Write("<script>$('#myModal').modal('show');</script>");
+                btnDel.CommandArgument = Convert.ToString(id);
+                ScriptManager.RegisterStartupScript(this, this.GetType(), "none",
+                   "<script type=\"text/javascript\" language=\"Javascript\" >"
+                   + "$('#myModal').modal('show');</script>", false);
                 return;
             }
             carts = CustomProduct.removeAProduct(product, carts);
@@ -81,7 +81,7 @@ namespace BTL_LTW
 
             Session["cartsCount"] = cartsCount;
             Session["carts"] = carts;
-            
+
             resetValue();
 
         }
@@ -102,16 +102,13 @@ namespace BTL_LTW
                     break;
                 }
             }
+            
+            btnDel.CommandArgument = Convert.ToString(id);
+            ScriptManager.RegisterStartupScript(this, this.GetType(), "none",
+               "<script type=\"text/javascript\" language=\"Javascript\" >"
+               + "$('#myModal').modal('show');</script>", false);
 
-            carts = CustomProduct.removeAllProduct(product, carts);
 
-            int cartsCount = (int)Session["cartsCount"];
-            cartsCount -= count;
-
-            Session["cartsCount"] = cartsCount;
-            Session["carts"] = carts;
-
-            resetValue();
         }
         protected void btnDetail_Click(object sender, EventArgs e)
         {
@@ -160,6 +157,35 @@ namespace BTL_LTW
             lblCartCount.Text = cartsCount.ToString();
             lwCarts.DataSource = carts;
             lwCarts.DataBind();
+        }
+
+        protected void btnDel_Click(object sender, EventArgs e)
+        {
+            Button btn = (Button)sender;
+
+            int id = Convert.ToInt32(btn.CommandArgument.ToString());
+            int count = 0;
+            List<CustomProduct> carts = (List<CustomProduct>)Session["carts"];
+            Product product = new Product();
+            foreach (CustomProduct custom in carts)
+            {
+                if (custom.product.Id == id)
+                {
+                    product = custom.product;
+                    count = custom.Count;
+                    break;
+                }
+            }
+
+            carts = CustomProduct.removeAllProduct(product, carts);
+
+            int cartsCount = (int)Session["cartsCount"];
+            cartsCount -= count;
+
+            Session["cartsCount"] = cartsCount;
+            Session["carts"] = carts;
+
+            resetValue();
         }
     }
 }

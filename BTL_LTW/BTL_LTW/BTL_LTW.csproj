@@ -97,16 +97,19 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="AboutPage.aspx" />
+    <Content Include="BillPage.aspx" />
     <Content Include="BuySuccessPage.aspx" />
     <Content Include="CartPage.aspx" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="css\BillPageCss.css" />
     <Content Include="css\CartPageCss.css" />
     <Content Include="css\DetailPageCss.css" />
     <Content Include="css\HomePageCss.css" />
     <Content Include="css\MassterPageCss.css" />
+    <Content Include="css\ProfilePageCss.css" />
     <Content Include="css\RegPageCss.css" />
     <Content Include="DetailPage.aspx" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
@@ -119,6 +122,8 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="MasterPage.Master" />
+    <Content Include="ProfilePage.aspx" />
+    <Content Include="saveProfile.aspx" />
     <Content Include="scripts\bootstrap.js" />
     <Content Include="scripts\bootstrap.min.js" />
     <Content Include="scripts\esm\popper-utils.js" />
@@ -195,6 +200,13 @@
     <Compile Include="AboutPage.aspx.designer.cs">
       <DependentUpon>AboutPage.aspx</DependentUpon>
     </Compile>
+    <Compile Include="BillPage.aspx.cs">
+      <DependentUpon>BillPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BillPage.aspx.designer.cs">
+      <DependentUpon>BillPage.aspx</DependentUpon>
+    </Compile>
     <Compile Include="BuySuccessPage.aspx.cs">
       <DependentUpon>BuySuccessPage.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -249,6 +261,13 @@
       <DependentUpon>MasterPage.Master</DependentUpon>
     </Compile>
     <Compile Include="Product.cs" />
+    <Compile Include="ProfilePage.aspx.cs">
+      <DependentUpon>ProfilePage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ProfilePage.aspx.designer.cs">
+      <DependentUpon>ProfilePage.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RegPage.aspx.cs">
       <DependentUpon>RegPage.aspx</DependentUpon>
@@ -256,6 +275,13 @@
     </Compile>
     <Compile Include="RegPage.aspx.designer.cs">
       <DependentUpon>RegPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="saveProfile.aspx.cs">
+      <DependentUpon>saveProfile.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="saveProfile.aspx.designer.cs">
+      <DependentUpon>saveProfile.aspx</DependentUpon>
     </Compile>
     <Compile Include="Users.cs" />
   </ItemGroup>

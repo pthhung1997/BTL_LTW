@@ -11,6 +11,10 @@ namespace BTL_LTW
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (!(bool)Session["login"])
+            {
+                Response.Write("<script>alert('Bạn chưa đăng nhập');window.location='http://localhost:55872/LoginPage.aspx';</script>");
+            }
             Session["login"] = false;
             Session["username"] = "";
             Session["user"] = null;

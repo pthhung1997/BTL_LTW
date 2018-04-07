@@ -3,10 +3,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="content" runat="server">
     <form runat="server" id="formBuySuccess">
         <div class="container" style="text-align:center;">
-            <img src="image/thanksoder.jpg" />
-            <p>
-                Đặt hàng thành công!
-            </p>
+            <img src="image/thanksoder.jpg" style="margin-top: 60px;"/><br />
             <asp:Button ID="btnHomePage" runat="server" Text="Về trang chủ" class="btn btn-link" OnClick="btnHomePage_Click" />
         </div>
     </form>
