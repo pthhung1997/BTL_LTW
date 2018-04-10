@@ -8,8 +8,8 @@
         Các thành viên:<br />
         <div class="col-md-offset-1">
             + Phạm Tiến Hùng - 15A06<br />
-            + Nguyễn Văn Tính - 15A<br />
-            + Phương Nam - 15A<br />
+            + Nguyễn Văn Tính - 15A04<br />
+            + Nguyễn Phương Nam - 15A01<br />
         </div>
         Đề tài: Xây dựng website bán hàng gồm các chức năng:<br />
         <div class="col-md-offset-1">

@@ -216,7 +216,7 @@
 
         function validateEmail() {
             var email = document.getElementById('<%=txtEmail.ClientID%>');
-            var regexEmail = /^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/;
+            var regexEmail = /^[a-zA-Z0-9._-]+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/;
             if (email.value.trim().length == 0) {
                 document.getElementById('<%=errEmail.ClientID%>').innerHTML = "Email không được để trống";
                 email.parentElement.parentElement.classList.add("has-error");

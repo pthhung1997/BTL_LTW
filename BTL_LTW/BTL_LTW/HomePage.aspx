@@ -49,15 +49,15 @@
 
                 <asp:ListView ID="lwHomePage" runat="server">
                     <ItemTemplate>
-                        <div class="item col-md-4">
+                        <div class="item col-md-4 col-sm-5">
                             <div class="row" id="ContentProduct">
                                 <%--<a href='http://localhost:55872/DetailPage.aspx?id=<%# Eval("Id")%>'><img src='<%# Eval("Path")%>' /></a>--%>
                                 <img src='<%# Eval("Path")%>' />
                                 <div class="row">
                                     <asp:Label runat="server" Text='<%# Eval("Name")%>'></asp:Label><br />
                                     <asp:Label runat="server" Text='<%# Eval("Price", "{0:0,00 VND}")%>'></asp:Label><br />
-                                    <asp:Button class="btn btn-default" runat="server" CommandArgument='<%# Eval("Id")%>' Text="Xem chi tiết" OnClick="btnDetail_Click" />
-                                    <asp:Button class="btn btn-default" runat="server" CommandArgument='<%# Eval("Id")%>' Text="Thêm vào giỏ hàng" OnClick="btnAddToCarts_Click" />
+                                    <asp:Button class="btn btn-default" runat="server" CommandArgument='<%# Eval("Id")%>' Text="Xem chi tiết" OnClick="btnDetail_Click" style="max-width: 100%;" />
+                                    <asp:Button class="btn btn-default" runat="server" CommandArgument='<%# Eval("Id")%>' Text="Thêm vào giỏ" OnClick="btnAddToCarts_Click" style="max-width: 100%;"  />
                                 </div>
                             </div>
                         </div>
